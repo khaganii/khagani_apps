@@ -6,6 +6,6 @@ public class simple_calc {
             int a = input.nextInt();
             System.out.println("Second_num");
             int b = input.nextInt();
-            System.out.println("Sum_of_them: " + (a+b));
+        System.out.println("Sum_of_them: " + (a+b));
         }
 }
