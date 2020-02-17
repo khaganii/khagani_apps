@@ -24,11 +24,12 @@ public class mixed_string {
                 general.append(((char) ((value - 26) + 97))); //generating
         }
         for (int i = 0; i < 30; i++) {
-            if((int)(general.toString().charAt(i)) >= 97){
-                if (S_V.contains(String.valueOf(general.toString().charAt(i))))
-                    SV.append(general.toString().charAt(i));
+            char k = general.toString().charAt(i);
+            if((int)(k) >= 97){
+                if (S_V.contains(String.valueOf(k)))
+                    SV.append(k);
                 else
-                    SC.append(general.toString().charAt(i));
+                    SC.append(k);
             }
             else
             {
