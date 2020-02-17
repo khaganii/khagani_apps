@@ -15,13 +15,13 @@ public class mixed_string {
         int value;
         for(int i = 0; i < 30; i++) // generating
         {
-            value = random.nextInt(52);
+            value = random.nextInt(51);
             if(value<=26)
             {
                 general.append((char)(value + 65)); //generating
             }
             else
-                general.append(((char) ((value % 26) + 97))); //generating
+                general.append(((char) ((value - 26) + 97))); //generating
         }
         for (int i = 0; i < 30; i++) {
             if((int)(general.toString().charAt(i)) >= 97){
