@@ -8,19 +8,24 @@ public class generating_strings {
         String a = "";
         String v = "";
         String c = "";
-        int value = 0;
-        for(int i = 1; i < 30; i++)
+        int value;
+        for(int i = 1; i < 30; i++) // generating
         {
             value = random.nextInt(26) + 97;
-            a = a + (char) value;
+            a = a.concat(Integer.toString(((char) value)));
+        }
+        char [] ch_arr = a.toCharArray();
+        for(int i = 1; i < 30; i++) //filtering
+        {
+            value = ch_arr[i-1];
             if(     value == 97 ||
                     value == 101 ||
                     value == 105 ||
                     value == 111 ||
-                    value == 117 ){
-                v = v + ((char) value);
-            }
-            else c = c + (char) value;
+                    value == 117 )
+                v = v.concat(Integer.toString(((char) value)));
+
+            else c = c.concat(Integer.toString(((char) value)));
         }
         System.out.println("Generating array: " + a);
         System.out.println("Vowel array: " + v);
