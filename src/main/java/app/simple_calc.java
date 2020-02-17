@@ -1,3 +1,5 @@
+package app;
+
 import java.util.Scanner;
 public class simple_calc {
         public static void main(String[] args){
