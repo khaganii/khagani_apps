@@ -1,20 +1,25 @@
 package figures;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Main_figure_app {
-    public static <figures> void main(String[] args) {
-       Rectangle rc = new Rectangle(new Point(2, 3), new Point(5, 3));
-       Triangle tr =  new Triangle(new Point(2, 3), new Point(5, 3), new Point(6, 5));
-       Circle cr =  new Circle(new Point(2,3), 4);
-
-       ArrayList <Figure> arrayList = new ArrayList();
-       arrayList.add(rc);
-       arrayList.add(tr);
-       arrayList.add(cr);
-       double total = 0;
-       for (Figure f: arrayList) {
-         total += f.area();
-       }
-      System.out.println(total);
+    public static Figure newfig(){
+      Random random = new Random();
+      switch (random.nextInt(3)) {
+        case 0:
+          return (new Triangle(new Point(), new Point(), new Point()));
+        case 1:
+          return  (new Rectangle(new Point(), new Point()));
+        default:
+          return (new Circle(new Point(), random.nextInt(8)));
+      }
+    }
+    public static void main(String[] args) {
+      ArrayList <Figure> figures = new ArrayList<>();
+      for (int i = 0; i < 10; i++) {
+       figures.add(newfig());
+      }
+      for (Figure f: figures)
+        System.out.println(f.area());
     }
 }

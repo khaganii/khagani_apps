@@ -1,10 +1,13 @@
 package figures;
 
+import java.util.Random;
+
 public class Point {
     int x;
     int y;
-    Point(int x, int y){
-        this.x = x;
-        this.y = y;
+    Random random = new Random();
+    Point(){
+        this.x = random.nextInt(8);
+        this.y = random.nextInt(8);
     }
 }
