@@ -8,9 +8,8 @@ public class Circle extends Figure {
         this.p1 = p1;
         r = a;
     }
-    public void area(){
-        double area;
-        area = p*Math.pow(r, 2);
-        System.out.println("Circle: " + area);
+    @Override
+    public double area(){
+        return p*Math.pow(r, 2);
     }
 }

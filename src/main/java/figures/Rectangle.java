@@ -8,10 +8,8 @@ public class Rectangle extends Figure{
         this.p2 = p2;
     }
     @Override
-    public void area(){
-        double area;
-        area = Math.abs(p1.x - p2.x) * Math.abs(p1.y - p2.y);
-        System.out.println("Circle: " + area);
+    public double area(){
+      return Math.abs(p1.x - p2.x) * Math.abs(p1.y - p2.y);
     }
 
 

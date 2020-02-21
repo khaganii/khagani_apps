@@ -10,8 +10,7 @@ public class Triangle extends Figure {
         this.p3 = p3;
     }
     @Override
-    public void area(){
-        double area = p1.x + p1.y + 25;
-        System.out.println("Circle: " + area);
+    public double area(){
+      return (p1.x + p1.y + 25);
     }
 }

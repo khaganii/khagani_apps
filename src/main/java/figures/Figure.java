@@ -1,7 +1,7 @@
 package figures;
 
 public class Figure {
-    public void area(){
-
+    public double area(){
+      return 0;
     }
 }
