@@ -15,10 +15,10 @@ public class Files {
     List<Integer> randoms_2 = new ArrayList<>();
     List<Integer> randoms_sorted = new ArrayList<>();
 
-    writeToFile(generate_randoms(randoms) , file1);
+    writeToFile(generate_randoms(randoms), file1);
     readFromFile(randoms_2, file1);
     randoms_sorted.addAll(sorting(randoms_2));
-    writeToFile(randoms_sorted , file2);
+    writeToFile(randoms_sorted, file2);
   }
 
   public static List<Integer> generate_randoms(List<Integer> randoms)
