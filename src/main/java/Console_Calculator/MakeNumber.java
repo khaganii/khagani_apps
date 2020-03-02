@@ -4,11 +4,16 @@ import java.util.Scanner;
 
 public class MakeNumber {
   public static void main(String[] args) {
-    String a;
+    String a = "";
     Scanner sc = new Scanner(System.in);
-    System.out.println("enter your String! \n ");
-    a = sc.nextLine().trim();
-    calculate(a);
+      while (true)
+      {
+        if ("quit".equals(a.toLowerCase()))
+          break;
+        System.out.println("enter your String! \n ");
+        a = sc.nextLine().trim();
+        calculate(a);
+      }
   }
   public static void calculate(String a)
   {
@@ -27,6 +32,7 @@ public class MakeNumber {
       {
         operator = ch_mas[i];
         num1 = parsing(sub.trim());
+        num1 = num1 * (-1);
         sub = "";
       }
     }
