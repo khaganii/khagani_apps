@@ -15,7 +15,6 @@ class ArrayListsConcatTest {
   void setUp(){
     this.task = new Joiner();
   }
-
   @Test
   void list1() {
     List <Integer> original1 =  Arrays.asList(1,3,5);

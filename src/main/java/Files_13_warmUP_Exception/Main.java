@@ -1,7 +1,9 @@
-package Files_13_warmUP;
+package Files_13_warmUP_Exception;
 
 import java.io.*;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 public class Main {
   public static void main(String[] args) throws IOException {
@@ -10,9 +12,9 @@ public class Main {
     ArrayList<String> verb_obj = new ArrayList<>();
     HashMap <String, List<String>> hashMap1 = new HashMap();
     HashMap <String, List<String>> hashMap2 = new HashMap();
-    File file1 = new File("src\\main\\java\\Files_13_warmUP\\subj_verb_.txt");
-    File file2 = new File("src\\main\\java\\Files_13_warmUp\\verb_obj_.txt");
-    File file3 = new File("src\\main\\java\\Files_13_warmUp\\sentence.txt");
+    File file1 = new File("src\\main\\java\\Files_13_warmUP_Exception\\subj_verb_.txt");
+    File file2 = new File("src\\main\\java\\Files_13_warmUp_Exception\\ver_obj_.txt");
+    File file3 = new File("src\\main\\java\\Files_13_warmUp_Exception\\sentence.txt");
 
     //read from subj_verb.txt;
     subj_verb.addAll(readFromFile(file1));
@@ -32,16 +34,21 @@ public class Main {
     writeToFile(file3, sentences);
   }
 
-
   public static List<String> readFromFile(File file) throws IOException {
     BufferedReader br = new BufferedReader(new FileReader(file));
     String st;
     List<String> read = new ArrayList<>();
-    while ((st = br.readLine()) != null){
-      read.add(st);
+    try{
+      while ((st = br.readLine()) != null){
+        read.add(st);
+      }
+      br.close();
+      return read;
     }
-    br.close();
-    return read;
+    catch (Exception e){
+      System.out.println("File not Found! " + e);
+      return read;
+    }
   }
 
   public static HashMap<String, List<String>> splitting(List<String> list){
